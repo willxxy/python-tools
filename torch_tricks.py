@@ -16,3 +16,6 @@ for i in range(10):
     x = torch.rand(5, 3)
     print(x)
 
+# counts the number of parameters in a model
+def count_parameters(model: nn.Module) -> int:
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
